@@ -103,7 +103,6 @@ public class ManagersController {
             int salary = Integer.parseInt(req.queryParams("salary"));
             double budget = Integer.parseInt(req.queryParams("budget"));
 
-            manager.setId(id);
             manager.setFirstName(firstName);
             manager.setLastName(lastName);
             manager.setSalary(salary);
@@ -112,7 +111,7 @@ public class ManagersController {
 
             DBHelper.save(manager);
 
-            res.redirect("/managers/:id");
+            res.redirect("/managers");
             return null;
         }, new VelocityTemplateEngine());
 
